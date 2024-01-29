@@ -3,10 +3,12 @@ import JSZip from "jszip";
 
 const handleDownload = async (routerName: string) => {
   const zip = new JSZip();
+  // .env
+  zip.file(`api-Gerada/.env`, env);
   // package.json
   zip.file(`api-Gerada/package.json`, code_packageJson);
   // firebase file
-  zip.file(`api-Gerada/firebase.config`, firebaseFile);
+  zip.file(`api-Gerada/firebase.config.ts`, firebaseFile);
   // rota-api
   zip.file(`api-Gerada/pages/api/${routerName}.ts`, SetRouterFile(routerName));
   // txt config api config
@@ -297,6 +299,15 @@ const auth = getAuth(appxx);
 const db = getDatabase(appxx);
 export { appxx, auth, db };
 
+`;
+
+const env = `
+NEXT_PUBLIC_APIKEY =
+NEXT_PUBLIC_AUTHDOMAIN =
+NEXT_PUBLIC_PROJECTID =
+NEXT_PUBLIC_STORAGEBUCKET =
+NEXT_PUBLIC_MENSAGINSENDER =
+NEXT_PUBLIC_APPID =
 `;
 
 export { handleDownload };
