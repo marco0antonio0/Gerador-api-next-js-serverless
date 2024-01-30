@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 export default function TopBar({ data = [true, false, false] }: { data: any }) {
@@ -16,6 +17,7 @@ export default function TopBar({ data = [true, false, false] }: { data: any }) {
 }
 
 function LayoutDesktop({ data }: { data: any }) {
+  const r = useRouter();
   return (
     <>
       <div className=" w-52 h-[100%] m-auto ml-14 ">
@@ -23,6 +25,9 @@ function LayoutDesktop({ data }: { data: any }) {
       </div>
       <div className="m-auto ml-32 flex flex-row gap-16 text-xl mb-10 md:ml-10 md:gap-10 md:mb-auto">
         <h1
+          onClick={() => {
+            r.push("/");
+          }}
           className={`select-none cursor-pointer active:scale-[1.05] ${
             data[0] ? "opacity-90" : "opacity-50"
           } font-bold`}
@@ -30,6 +35,9 @@ function LayoutDesktop({ data }: { data: any }) {
           Inicio
         </h1>
         <h1
+          onClick={() => {
+            r.push("/sobre");
+          }}
           className={`select-none cursor-pointer active:scale-[1.05] ${
             data[1] ? "opacity-90" : "opacity-50"
           } font-bold`}
@@ -37,6 +45,11 @@ function LayoutDesktop({ data }: { data: any }) {
           Sobre
         </h1>
         <h1
+          onClick={() => {
+            r.push(
+              "https://github.com/marco0antonio0/Gerador-api-next-js-serverless"
+            );
+          }}
           className={`select-none cursor-pointer active:scale-[1.05] ${
             data[2] ? "opacity-90" : "opacity-50"
           } font-bold`}
@@ -70,10 +83,14 @@ function LayoutSmartphone({ data }: { data: any }) {
 }
 
 function MenuOpen({ data }: { data: any }) {
+  const r = useRouter();
   return (
     <>
       <div className="absolute right-3 mt-2 top-24 h-auto bg-white border-2 border-gray-200 rounded-2xl items-center content-center flex flex-col gap-6 py-8 px-14">
         <h1
+          onClick={() => {
+            r.push("/");
+          }}
           className={`select-none cursor-pointer active:scale-[1.05] ${
             data[0] ? "opacity-90" : "opacity-50"
           } font-bold`}
@@ -81,6 +98,9 @@ function MenuOpen({ data }: { data: any }) {
           Inicio
         </h1>
         <h1
+          onClick={() => {
+            r.push("/sobre");
+          }}
           className={`select-none cursor-pointer active:scale-[1.05] ${
             data[1] ? "opacity-90" : "opacity-50"
           } font-bold`}
@@ -88,6 +108,11 @@ function MenuOpen({ data }: { data: any }) {
           Sobre
         </h1>
         <h1
+          onClick={() => {
+            r.push(
+              "https://github.com/marco0antonio0/Gerador-api-next-js-serverless"
+            );
+          }}
           className={`select-none cursor-pointer active:scale-[1.05] ${
             data[2] ? "opacity-90" : "opacity-50"
           } font-bold`}

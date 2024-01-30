@@ -12,7 +12,7 @@ export default function Home() {
     <main className={`flex min-h-screen flex-col `}>
       <TopBar data={[true, false, false]} />
 
-      <div className="w-[80%] h-auto m-auto mt-0 bg-slate-400 flex flex-col">
+      <div className="w-[80%] h-auto m-auto mt-0 flex flex-col">
         <h1 className="m-auto text-2xl font-semibold mt-5">Gerador de api</h1>
         <div className="flex flex-col m-auto gap-3 mt-5 w-[100%]">
           <Widget_btn

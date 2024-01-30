@@ -4,9 +4,6 @@ import TopBar from "@/components/topbar";
 import { handleDownload } from "@/code/codeGenerator";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import Markdown from "react-markdown";
-var FileSaver = require("file-saver");
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const r = useRouter();
@@ -45,60 +42,6 @@ export default function Home() {
             }}
             text="fazer download da api"
           />
-          <div className="prose-xl m-auto w-[70%]">
-            <h3 className="">Sobre a api</h3>
-            <p>
-              O projeto geredor de api consiste na geração de uma estrutura de
-              api serverless em Next-js. As rotas geradas para o nome desejado
-              digitado acima
-              <br />
-              Ao fazer o donwload da api, <br />
-              Inicie na raiz do projeto o comando <br />
-              -----------------------------------------
-              <br />
-              npm install
-              <br />
-              -----------------------------------------
-              <br />
-              Para iniciar a api preencha os dados env com os dados de sua
-              database firebase realtime
-              <br />
-              -----------------------------------------
-              <br />
-              Rode o comando abaixo assim que tudo estiver ok
-              <br />
-              npm install
-              <br />
-              -----------------------------------------
-              <br />
-            </p>
-            <h3>{`<Rota_que_deseja_criar>`}</h3>
-            <p>
-              sistema crud em que passagem de parametro é dita pelo -- body{" "}
-              <br />
-            </p>
-            <p>
-              CREATE: Metodo 'post' <br />
-              Recebe como parametro 'title' e 'text'
-            </p>
-            <p>
-              REMOVE: Metodo 'delete' <br />
-              Recebe como parametro 'key' para identificar o delete
-            </p>
-            <p>
-              UPDATE: Metodo 'put' <br />
-              Recebe como parametro 'key','title','text' para fazer a
-              atualização
-            </p>
-            <p>
-              SEARCH ALL: Metodo 'GET' <br />
-              Não recebe parametro no 'body' nem no 'req'
-            </p>
-            <p>
-              SEARCH ONLY BY KEY: Metodo 'GET' <br />
-              Recebe parametro na URL request, parametro 'key'
-            </p>
-          </div>
         </div>
         <div className="h-20"></div>
       </div>
